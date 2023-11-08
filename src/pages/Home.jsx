@@ -2,6 +2,9 @@ import { Box, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "../App.css"
+
+import { Link } from 'react-router-dom';
+
 const theme = createTheme({
   typography: {
     fontFamily: ["Inter", "sans-serif"].join(","),
@@ -47,6 +50,7 @@ const Home = () => {
           <Typography className="" variant="h4" sx={{ color: "#2a284d" }}>
             Every Child Deserves a Chance to Learn
           </Typography>
+          <Link to="./Events/Volunteering">
           <Button
             size="larger"
             variant="contained"
@@ -58,9 +62,11 @@ const Home = () => {
               width: "100px",
               fontWeight: "bold",
             }}
+           
           >
-            Donate
+            Join Us
           </Button>
+          </Link>
         </div>
       </Box>
     </ThemeProvider>

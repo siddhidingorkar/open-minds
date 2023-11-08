@@ -1,16 +1,17 @@
 import React from 'react';
-import '../App.css'
-import { colors } from '@material-ui/core';
+import './contact.css'
+import Footer from '../components/Footer';
 const ContactUs = () => {
   return (
+    <>
     <section id="contact">
     <div class="contact-box">
       <div class="contact-links">
         <h2>CONTACT US</h2>
         <ul style={{color:"white", marginTop:"80px"}}>
-        <li>Email: example@email.com</li>
-        <li>Phone: (123) 456-7890</li>
-        <li>Address: 123 Main Street, City, Country</li>
+        <li>Email: Rajat@email.com</li>
+        <li>Phone: +91 82562546</li>
+        <li>Address: 123 Main Street, pune, Maharashtra</li>
       </ul>
 
       </div>
@@ -32,7 +33,11 @@ const ContactUs = () => {
         </form>
       </div>
     </div>
+
   </section>
+  <Footer/>
+  </>
+  
   );
 };
 

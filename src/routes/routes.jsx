@@ -9,6 +9,7 @@ import login from "../pages/login";
 import signup from "../pages/signup";
 import Donation from '../pages/Donation';
 import Events from '../pages/Events'
+import Volunteering from '../pages/Volunteering';
 
 const routes = [
     {
@@ -42,6 +43,11 @@ const routes = [
         path: '/Donation',
         component: Donation,
     },
+    {
+        path: 'Events/Volunteering',
+        component: Volunteering,
+    }
+
   
     
 ];

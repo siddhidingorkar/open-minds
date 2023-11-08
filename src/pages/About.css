@@ -1,0 +1,38 @@
+.container {
+    padding-top: 40px; /* Add space at the top of the content container */
+  }
+  
+  .display-5 {
+    font-size: 36px; /* Adjust the font size of display-5 headings */
+  }
+  
+  .lead {
+    font-size: 18px; /* Adjust font size for lead text */
+  }
+  
+  .row {
+    margin-bottom: 40px; /* Add space between rows */
+  }
+  
+  /* Style images within the content */
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Style image captions (text alternatives) */
+  img::after {
+    content: attr(alt); /* Use the alt attribute as the caption */
+    display: block;
+    text-align: center;
+    font-size: 14px; /* Adjust the font size for captions */
+    margin-top: 10px; /* Adjust the space between the image and the caption */
+    color: white; /* Caption text color */
+  }
+  
+  .bruh {
+    display: inline-block;
+    justify-content: center;
+  }

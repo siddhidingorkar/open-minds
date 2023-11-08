@@ -17,11 +17,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   paper: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(3), backgroundColor:"#B7C0DD"
   },
   inputField: {
     marginBottom: theme.spacing(2),
   },
+  
 }));
 
 function Donation() {
@@ -41,6 +42,7 @@ function Donation() {
                 fullWidth
                 className={classes.inputField}
                 required
+                
               />
             </Grid>
             <Grid item xs={12}>

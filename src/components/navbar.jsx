@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     flexGrow: "1",
     cursor: "pointer",
-    fontFamily: 'cursive',
-    color:"yellow"
+    fontFamily: 'inter',
+    color:"white"
   },
   link: {
     textDecoration: "none",

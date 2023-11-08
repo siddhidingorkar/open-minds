@@ -1,0 +1,223 @@
+import React, { useState } from 'react';
+
+function Volunteer() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    age: '',
+    email: '',
+    qualification: '',
+    gender: '',
+    availableDates: '',
+    hoursPerWeek: '',
+    contactNumber: '',
+    acceptance: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add more advanced validation logic here
+    if (formData.firstName && formData.lastName && formData.email) {
+      alert('Volunteer form submitted successfully!');
+      // You can also send this data to a server or API here
+    } else {
+      alert('Please fill in all required fields.');
+    }
+  };
+
+  return (
+    
+    <div style={containerStyle} className="volunteer-form">
+      
+      <h2 style={formHeadingStyle}>Volunteer Form</h2>
+      <form onSubmit={handleSubmit} style={formStyle}>
+        <div style={fieldStyle}>
+          <label style={labelStyle}>First Name:</label>
+          <input
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>Last Name:</label>
+          <input
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>Age:</label>
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>Educational Qualification:</label>
+          <input
+            type="text"
+            name="qualification"
+            value={formData.qualification}
+            onChange={handleChange}
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>Gender:</label>
+          <select
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            style={inputStyle}
+          >
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>What dates are you available?</label>
+          <input
+            type="text"
+            name="availableDates"
+            value={formData.availableDates}
+            onChange={handleChange}
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>How many hours per week are you available?</label>
+          <input
+            type="number"
+            name="hoursPerWeek"
+            value={formData.hoursPerWeek}
+            onChange={handleChange}
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>Contact Number:</label>
+          <input
+            type="tel"
+            name="contactNumber"
+            value={formData.contactNumber}
+            onChange={handleChange}
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle}>
+            By submitting this application, I affirm that the facts set forth in it are true and complete. I understand that if I am accepted as a volunteer, any false statements, omissions, or other misrepresentations made by me on this application may result in my immediate dismissal.
+            <input
+              type="checkbox"
+              name="acceptance"
+              checked={formData.acceptance}
+              onChange={handleChange}
+              required
+              style={checkboxStyle}
+            />
+          </label>
+        </div>
+
+        <button style={submitButtonStyle} type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  minHeight: '100vh',
+};
+
+const formStyle = {
+  width: '100%',
+  maxWidth: '600px',
+  padding: '20px',
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  backgroundColor: 'white',
+  margin: '0 auto', // Center the form horizontally
+  textAlign: 'center', // Center the content inside the form
+};
+
+
+const formHeadingStyle = {
+  fontSize: '35px',
+  color: 'yellow',
+  marginBottom: '20px',
+};
+
+const fieldStyle = {
+  marginBottom: '20px',
+};
+
+const labelStyle = {
+  color: 'white',
+  marginBottom: '5px',
+};
+
+const inputStyle = {
+  width: '100%',
+  padding: '10px',
+  fontSize: '16px',
+};
+
+const checkboxStyle = {
+  marginRight: '10px',
+};
+
+const submitButtonStyle = {
+  padding: '10px 20px',
+  backgroundColor: 'blue',
+  color: 'white',
+  border: 'none',
+  borderRadius: '5px',
+  fontSize: '18px',
+  cursor: 'pointer',
+};
+
+export default Volunteering;
