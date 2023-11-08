@@ -1,8 +1,20 @@
-# React + Vite
+#  Installation and Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run the Open Minds NGO website locally, follow these steps:
 
-Currently, two official plugins are available:
+1. Clone the GitHub repository to your local machine.
+git clone https://github.com/Rajat-Rathaur/open-minds.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+2. Navigate to the project directory.
+cd “open-minds”
+   
+
+3. Install the required dependencies using npm.
+npm install  - - force
+   
+
+4. Start the development server.
+ npm run dev
+
+5. The website will be accessible in your web browser at “http://localhost:5173”.
