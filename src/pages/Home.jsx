@@ -13,6 +13,7 @@ const theme = createTheme({
 
 const Home = () => {
   return (
+    <>
     <ThemeProvider theme={theme}>
       <Box
         sx={{
@@ -67,9 +68,14 @@ const Home = () => {
             Join Us
           </Button>
           </Link>
+    
         </div>
+       
       </Box>
+  
     </ThemeProvider>
+
+    </>
   );
 };
 
