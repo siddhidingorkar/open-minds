@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Typography,
@@ -17,24 +17,45 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   paper: {
-    padding: theme.spacing(3), backgroundColor:"#B7C0DD"
+    padding: theme.spacing(3),
+    backgroundColor: '#B7C0DD',
   },
   inputField: {
     marginBottom: theme.spacing(2),
   },
-  
+  form: {
+    padding: theme.spacing(2), // Add padding to the form
+  },
 }));
 
 function Donation() {
   const classes = useStyles();
 
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [donationAmount, setDonationAmount] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
+
+  const handleDonateNow = () => {
+    if (!fullName || !email || !donationAmount || !paymentMethod) {
+      alert('Please fill in all required fields.');
+    } else {
+      alert('Donation successful');
+      // Clear the input fields
+      setFullName('');
+      setEmail('');
+      setDonationAmount('');
+      setPaymentMethod('');
+    }
+  };
+  
   return (
-    <Container maxWidth="md" className={classes.container} >
-      <Paper elevation={3} className={classes.paper} >
+    <Container maxWidth="md" className={classes.container}>
+      <Paper elevation={3} className={classes.paper}>
         <Typography variant="h5" gutterBottom>
           Make a Donation
         </Typography>
-        <form>
+        <form className={classes.form}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <TextField
@@ -42,7 +63,8 @@ function Donation() {
                 fullWidth
                 className={classes.inputField}
                 required
-                
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -51,6 +73,8 @@ function Donation() {
                 fullWidth
                 className={classes.inputField}
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -60,22 +84,23 @@ function Donation() {
                 type="number"
                 className={classes.inputField}
                 required
+                value={donationAmount}
+                onChange={(e) => setDonationAmount(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
-              
               <Select
                 label="Payment Method"
                 fullWidth
                 className={classes.inputField}
                 required
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value)}
               >
-             
                 <MenuItem value="credit-card">Credit Card</MenuItem>
-                <MenuItem value="paypal">Debit Card</MenuItem>
+                <MenuItem value="debit-card">Debit Card</MenuItem>
                 <MenuItem value="paypal">PayPal</MenuItem>
-                <MenuItem value="paypal">UPI</MenuItem>
-               
+                <MenuItem value="upi">UPI</MenuItem>
               </Select>
             </Grid>
           </Grid>
@@ -84,6 +109,7 @@ function Donation() {
             color="primary"
             fullWidth
             className={classes.inputField}
+            onClick={handleDonateNow}
           >
             Donate Now
           </Button>
