@@ -16,13 +16,12 @@ const useStyles = makeStyles((theme) => ({
   navlinks: {
     display: "flex",
     alignItems: "center",
-  
   },
   logo: {
     flexGrow: "1",
     cursor: "pointer",
-    fontFamily: 'inter',
-    color:"white"
+    fontFamily: "inter",
+    color: "white",
   },
   link: {
     textDecoration: "none",
@@ -42,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "lightblue", // Set the background color on hover
     },
   },
-  
 }));
 
 function Navbar() {
@@ -54,33 +52,33 @@ function Navbar() {
     <AppBar position="static">
       <CssBaseline />
       <Toolbar>
-      
         {isMobile ? (
           <DrawerComponent />
-        ) : (<>
-          <Typography variant="h4" className={classes.logo}     >
-          Open Minds
-        </Typography>
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/About" className={classes.link}>
-              About
-            </Link>
-            <Link to="/contactUs" className={classes.link}>
-              Contact
-            </Link>
-            <Link to="/Events" className={classes.link}>
-              Events
-            </Link>
-            <Link to="/Donation" className={classes.link}>
-              Donation
-            </Link>
-            <Button component={Link} to="/login" className={classes.loginButton}>
-              Login
-            </Button>
-          </div>
+        ) : (
+          <>
+            <Typography variant="h4" className={classes.logo}>
+              Open Minds
+            </Typography>
+            <div className={classes.navlinks}>
+              <Link to="/" className={classes.link}>
+                Home
+              </Link>
+              <Link to="/About" className={classes.link}>
+                About
+              </Link>
+              <Link to="/contactUs" className={classes.link}>
+                Contact
+              </Link>
+              <Link to="/Events" className={classes.link}>
+                Events
+              </Link>
+              <Link to="/Donation" className={classes.link}>
+                Donation
+              </Link>
+              <Link to="/Login" className={classes.link}>
+                Login
+              </Link>
+            </div>
           </>
         )}
       </Toolbar>
