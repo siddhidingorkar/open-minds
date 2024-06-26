@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './volunteering.css'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./volunteering.css";
 
 const Volunteering = () => {
   // State to manage form input values
-  const [fullName, setFullName] = useState('');
-  const [age, setAge] = useState('');
-  const [email, setEmail] = useState('');
-  const [qualification, setQualification] = useState('');
-  const [gender, setGender] = useState('male'); // Set the default gender here
-  const [contactNumber, setContactNumber] = useState('');
-  const [date, setDate] = useState('');
+  const [fullName, setFullName] = useState("");
+  const [age, setAge] = useState("");
+  const [email, setEmail] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [gender, setGender] = useState("male"); // Set the default gender here
+  const [contactNumber, setContactNumber] = useState("");
+  const [date, setDate] = useState("");
 
   const handleRegister = () => {
-    if (!fullName || !age || !email || !qualification || !contactNumber || !date) {
-      alert('Please fill in all required fields.');
+    if (
+      !fullName ||
+      !age ||
+      !email ||
+      !qualification ||
+      !contactNumber ||
+      !date
+    ) {
+      alert("Please fill in all required fields.");
     } else {
-      alert('Registered successfully');
+      alert("Registered successfully");
       // Clear the input fields
-      setFullName('');
-      setAge('');
-      setEmail('');
-      setQualification('');
-      setGender('male'); // Reset the gender to the default value
-      setContactNumber('');
-      setDate('');
+      setFullName("");
+      setAge("");
+      setEmail("");
+      setQualification("");
+      setGender("male"); // Reset the gender to the default value
+      setContactNumber("");
+      setDate("");
     }
   };
 
@@ -120,6 +127,6 @@ const Volunteering = () => {
       </form>
     </div>
   );
-}
+};
 
 export default Volunteering;
