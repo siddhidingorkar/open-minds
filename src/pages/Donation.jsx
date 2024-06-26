@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Container,
   Typography,
@@ -9,16 +9,16 @@ import {
   Paper,
   Select,
   MenuItem,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(10),
     marginBottom: theme.spacing(4),
   },
   paper: {
     padding: theme.spacing(3),
-    backgroundColor: '#B7C0DD',
+    backgroundColor: "white",
   },
   inputField: {
     marginBottom: theme.spacing(2),
@@ -31,24 +31,24 @@ const useStyles = makeStyles((theme) => ({
 function Donation() {
   const classes = useStyles();
 
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [donationAmount, setDonationAmount] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [donationAmount, setDonationAmount] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
 
   const handleDonateNow = () => {
     if (!fullName || !email || !donationAmount || !paymentMethod) {
-      alert('Please fill in all required fields.');
+      alert("Please fill in all required fields.");
     } else {
-      alert('Donation successful');
+      alert("Donation successful");
       // Clear the input fields
-      setFullName('');
-      setEmail('');
-      setDonationAmount('');
-      setPaymentMethod('');
+      setFullName("");
+      setEmail("");
+      setDonationAmount("");
+      setPaymentMethod("");
     }
   };
-  
+
   return (
     <Container maxWidth="md" className={classes.container}>
       <Paper elevation={3} className={classes.paper}>
@@ -63,6 +63,7 @@ function Donation() {
                 fullWidth
                 className={classes.inputField}
                 required
+                type="fullname"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
               />
@@ -73,6 +74,7 @@ function Donation() {
                 fullWidth
                 className={classes.inputField}
                 required
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -107,7 +109,6 @@ function Donation() {
           <Button
             variant="contained"
             color="primary"
-            fullWidth
             className={classes.inputField}
             onClick={handleDonateNow}
           >
