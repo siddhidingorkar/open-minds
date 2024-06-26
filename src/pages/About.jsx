@@ -18,7 +18,10 @@ function About() {
             }}
           >
             <div>
-              <h1 className="display-5" style={{ fontWeight: "bold", color:"yellow" }}>
+              <h1
+                className="display-5"
+                style={{ fontWeight: "bold", color: "black" }}
+              >
                 Our Mission
               </h1>
               <p className="lead" style={{ fontWeight: "bolder" }}>
@@ -55,7 +58,10 @@ function About() {
             style={{ display: "flex", alignItems: "center" }}
           >
             <div>
-              <h1 className="display-5" style={{ fontWeight: "bold" , color:"yellow"}}>
+              <h1
+                className="display-5"
+                style={{ fontWeight: "bold", color: "black" }}
+              >
                 Our Vision
               </h1>
               <p className="lead" style={{ fontWeight: "bolder" }}>
@@ -77,18 +83,17 @@ function About() {
           display: "flex",
           width: "100%",
           height: "88px",
-          backgroundColor: "#1976d2",
+
           justifyContent: "space-evenly",
           alignItems: "center",
         }}
       >
         <div
-          style={{ color: "white", fontWeight: "bold", fontSize: "32px" }}
+          style={{ color: "black", fontWeight: "bold", fontSize: "32px" }}
           className="mx-5 px-2"
         >
-       Educate, Elevate, Empower!
+          Educate, Elevate, Empower!
         </div>
-        
       </div>
       <div className="container">
         <h1
@@ -109,7 +114,7 @@ function About() {
               <div>
                 <h1
                   className="display-5"
-                  style={{ fontWeight: "bold", color: "yellow" }}
+                  style={{ fontWeight: "bold", color: "black" }}
                 >
                   Education
                 </h1>
@@ -125,12 +130,6 @@ function About() {
                   instructor works with children either in the school or in the
                   community.
                 </p>
-                <Button
-                  variant="outlined"
-                  sx={{ fontWeight: "bold", color: "white" }}
-                >
-                  Learn More
-                </Button>
               </div>
             </div>
             <div className="col-6">
@@ -170,24 +169,23 @@ function About() {
         style={{
           display: "flex",
           width: "100%",
-          height: "88px",
-          backgroundColor: "#1976d2",
+          height: "50px",
           justifyContent: "space-evenly",
           alignItems: "center",
         }}
       >
         <div
-          style={{ color: "white", fontWeight: "bold", fontSize: "32px" }}
+          style={{ color: "black", fontWeight: "bold", fontSize: "32px" }}
           className="mx-5 px-2"
         >
-    "Empowering Minds, Building Futures, and Lighting the Path to a Brighter Tomorrow!"
+          "Empowering Minds, Building Futures, and Lighting the Path to a
+          Brighter Tomorrow!"
         </div>
-      
       </div>
       <div className="container">
         <OurTeam />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
